@@ -1,0 +1,18 @@
+[project]
+name = "lssfind"
+version = "0.1.0"
+description = "Python implementation of LSSFind and LocalLSSFind"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+    { name = "Nicolas Alexander Ihlo" , email = "nicolas.ihlo@informatik.uni-regensburg.de" }
+  ]
+dependencies = [
+    "scikit-learn",
+    "wfpgrowth"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+

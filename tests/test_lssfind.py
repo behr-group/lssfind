@@ -2,6 +2,8 @@ import unittest
 from lssfind import get_prevalent_interactions, get_sample_interactions
 import numpy as np
 from collections import OrderedDict
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.datasets import make_regression
 
 class RFtests(unittest.TestCase):
     """
@@ -12,8 +14,6 @@ class RFtests(unittest.TestCase):
         """
         Create dataset and train Random Forest.
         """
-        from sklearn.ensemble import RandomForestRegressor
-        from sklearn.datasets import make_regression
         X, y = make_regression(n_features=4, n_informative=2, random_state=0, shuffle=False)
         self.rf = RandomForestRegressor(random_state=0)
         self.rf.fit(X, y)
@@ -62,7 +62,8 @@ class RFtests(unittest.TestCase):
                     expected.get(interaction, (0., 0.))[0], 7
                 )
         
+def main():
+    unittest.main()
 
 if __name__ == '__main__':
-    import sys
-    sys.exit(unittest.main())
+    main()
